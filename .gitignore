@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.output/
+.vinxi/
+
+# Environment variables (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Wrangler (Cloudflare) local state & generated types
+.wrangler/
+worker-configuration.d.ts
+
+# Editor/OS
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# TanStack Router generated file is fine to commit, but if you'd rather
+# regenerate it on every install, uncomment the line below:
+# src/routeTree.gen.ts

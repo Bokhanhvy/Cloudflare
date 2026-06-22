@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // This becomes the *.workers.dev subdomain (and is shown in the Cloudflare
+  // dashboard) — rename it to whatever you'd like before your first deploy.
+  "name": "qc-sample-shipment-tracking",
+  // Keep this as today's date when you first deploy; Wrangler uses it to
+  // pin runtime behavior so future Workers platform changes don't silently
+  // change how your app behaves. Don't backdate it.
+  "compatibility_date": "2026-06-22",
+  // Required: many npm packages (incl. ones this app depends on, like
+  // exceljs/xlsx/tesseract.js) expect Node.js built-ins to exist.
+  "compatibility_flags": ["nodejs_compat"],
+  // `npm run build` runs Nitro with the "cloudflare_module" preset, which
+  // bundles our SSR entry (src/server.ts, wrapping TanStack Start's
+  // server-entry with our SSR error handling) into .output/server/index.mjs.
+  "main": "./.output/server/index.mjs",
+  // Static client assets (JS/CSS/images), also produced by `npm run build`.
+  "assets": {
+    "directory": "./.output/public"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

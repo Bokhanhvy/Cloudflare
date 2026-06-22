@@ -1,0 +1,2 @@
+ALTER TABLE public.shipment_records ADD COLUMN IF NOT EXISTS status_changed_at timestamptz NOT NULL DEFAULT now();
+UPDATE public.shipment_records SET status_changed_at = updated_at WHERE status_changed_at = created_at OR status_changed_at IS NULL;

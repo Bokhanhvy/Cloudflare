@@ -1,0 +1,2 @@
+ALTER TABLE public.shipment_records ADD COLUMN IF NOT EXISTS is_unrecognized boolean NOT NULL DEFAULT false;
+CREATE INDEX IF NOT EXISTS idx_shipment_records_unrecognized ON public.shipment_records (is_unrecognized) WHERE is_unrecognized = true;
