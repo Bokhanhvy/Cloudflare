@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   // This becomes the *.workers.dev subdomain (and is shown in the Cloudflare
   // dashboard) — rename it to whatever you'd like before your first deploy.
-  "name": "qc-sample-shipment-tracking",
+  "name": "anhxuathang",
   // Keep this as today's date when you first deploy; Wrangler uses it to
   // pin runtime behavior so future Workers platform changes don't silently
   // change how your app behaves. Don't backdate it.
